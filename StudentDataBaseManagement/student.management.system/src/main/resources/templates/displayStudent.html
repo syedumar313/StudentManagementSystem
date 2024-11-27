@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Students</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the CSS file path is correct -->
+</head>
+<body>
+	<div class="navbar">
+		    <a href="/" th:class="${currentPage} == 'index' ? 'active' : ''">Home</a>
+		    <a href="/registerPage" th:class="${currentPage} == 'addStudent' ? 'active' : ''">Register New Student</a>
+		    <a href="/fetchAll" th:class="${currentPage} == 'viewAll' ? 'active' : ''">View All Students</a>
+		    <a href="/searchPage" th:class="${currentPage} == 'searchStudent' ? 'active' : ''">Search Student</a>
+		    <a href="/updatePage" th:class="${currentPage} == 'updateStudent' ? 'active' : ''">Update Student</a>
+		    <a href="/deletePage" th:class="${currentPage} == 'deleteStudent' ? 'active' : ''">Delete Student</a>
+		</div>
+    
+		<div class="container">
+        <h1>Student List</h1>
+      
+		  <table class="students-table">
+            <thead>
+                <tr>
+                    <th>University ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Branch</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+			<tbody>
+				<tr th:if="${student}">
+					<td th:text="${student.univId}"></td>
+			        <td th:text="${student.name}"></td>
+			        <td th:text="${student.email}"></td>
+			        <td th:text="${student.branch}"></td>
+			        <td th:text="${student.address}"></td>
+			    </tr>		    
+			</tbody>
+
+        </table>
+    </div>
+</body>
+</html>
+
+
+

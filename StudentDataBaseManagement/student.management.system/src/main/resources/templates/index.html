@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the CSS file path is correct -->
+</head>
+<body>
+	
+	<div class="navbar">
+	    <a href="/" th:class="${currentPage} == 'index' ? 'active' : ''">Home</a>
+	    <a href="/registerPage" th:class="${currentPage} == 'addStudent' ? 'active' : ''">Register New Student</a>
+	    <a href="/fetchAll" th:class="${currentPage} == 'viewAll' ? 'active' : ''">View All Students</a>
+	    <a href="/searchPage" th:class="${currentPage} == 'searchStudent' ? 'active' : ''">Search Student</a>
+	    <a href="/updatePage" th:class="${currentPage} == 'updateStudent' ? 'active' : ''">Update Student</a>
+	    <a href="/deletePage" th:class="${currentPage} == 'deleteStudent' ? 'active' : ''">Delete Student</a>
+	</div>
+	
+	<br>
+
+    <div class="container">
+        <h1>Welcome to Student Managent Dashboard</h1>
+        <div class="action" id="register">
+            <a href="/registerPage" class="button">Register New Student</a>
+            <p class="description">Add a new student to the database.</p>
+        </div>
+        <div class="action" id="view-all">
+            <a href="/fetchAll" class="button">View All Existing Students</a>
+            <p class="description">View the list of all students.</p>
+        </div>
+        <div class="action" id="search">
+            <a href="/searchPage" class="button">Search Student</a>
+            <p class="description">Find a student by name, ID, or other criteria.</p>
+        </div>
+        <div class="action" id="update">
+            <a href="/updatePage" class="button">Update Existing Student</a>
+            <p class="description">Modify the details of an existing student.</p>
+        </div>
+        <div class="action" id="delete">
+            <a href="/deletePage" class="button">Delete Student</a>
+            <p class="description">Remove a student from the database.</p>
+        </div>
+    </div>
+</body>
+</html>

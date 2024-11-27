@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the CSS file path is correct -->
+</head>
+<body>
+	<div class="navbar">
+		    <a href="/" th:class="${currentPage} == 'index' ? 'active' : ''">Home</a>
+		    <a href="/registerPage" th:class="${currentPage} == 'addStudent' ? 'active' : ''">Register New Student</a>
+		    <a href="/fetchAll" th:class="${currentPage} == 'viewAll' ? 'active' : ''">View All Students</a>
+		    <a href="/searchPage" th:class="${currentPage} == 'searchStudent' ? 'active' : ''">Search Student</a>
+		    <a href="/updatePage" th:class="${currentPage} == 'updateStudent' ? 'active' : ''">Update Student</a>
+		    <a href="/deletePage" th:class="${currentPage} == 'deleteStudent' ? 'active' : ''">Delete Student</a>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+    <div class="container">
+        <h1>Delete Student</h1>
+        <p class="warning">Warning: This action cannot be undone. Please be certain before proceeding.</p>
+        <form action="/del" method="POST" class="form-container">
+            <div class="form-group">
+                <label for="univIdDelete">University ID:</label>
+                <input type="text" id="univIdDelete" name="univId" 
+									placeholder="Enter University ID to delete" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button delete">Delete Student</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
